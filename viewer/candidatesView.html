@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <title>Candidate Analytics</title>
+
+    <link rel="stylesheet" href="css/website.css" type="text/css" media="screen" />
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <script src="libraries/RGraph.common.core.js" ></script>
+    <script src="libraries/RGraph.common.dynamic.js" ></script>
+    <script src="libraries/RGraph.common.effects.js" ></script>
+    <script src="libraries/RGraph.common.tooltips.js" ></script>
+    <script src="libraries/RGraph.bar.js" ></script>
+    
+    <script>
+		var data = [[19, 7], [14, 2], [14, 18]];
+		var dates = ["Oct 01, 2011", "Oct 01, 2012", "Oct 02, 2012"];
+		var names = ['Obama', 'Romney', 'Obama', 'Romney', 'Obama', 'Romney'];
+		
+        window.onload = function() {
+			var bar1 = new RGraph.Bar('cvs_bar', data);;
+            bar1.Set('chart.colors', ['rgba(0, 0, 235, 0.5)', 'rgba(235, 0, 0,0.5)']); 
+            bar1.Set('chart.labels', dates);
+            bar1.Set('chart.tooltips', names);
+            bar1.Set('chart.tooltips.event', 'onmousemove');
+            bar1.Set('chart.background.grid', true);
+            //bar1.Set('chart.key', ['Obama', 'Romney']);
+            //bar1.Set('chart.key.position.gutter.boxed', true);
+            //bar1.Set('chart.key.position', 'gutter');
+            //bar1.Set('chart.key.background', 'rgb(255,255,255)');
+            //bar1.Set('chart.shadow', true);
+           // bar1.Set('chart.shadow.blur', 15);
+            //bar1.Set('chart.shadow.offsetx', 3);
+            //bar1.Set('chart.shadow.offsety', -3);
+            //bar1.Set('chart.shadow.color', '#FFF');
+            bar1.Set('chart.strokestyle', 'rgba(0,0,0,0)');
+            bar1.Set('chart.gutter.left', 55);
+            bar1.Set('chart.gutter.right', 5);
+            RGraph.Effects.Fade.In(bar1);
+			RGraph.Effects.Bar.Wave(bar1, {'duration': 450});
+ }
+    </script>
+</head>
+<body>
+
+<h1>Candidate Analytics <span>Obama v<span style="color:red">s Romney</span></span></h1>
+<canvas width="800" height="250" id="cvs_bar" style="float: right"></canvas>
+    <h2>Chart <span>Policital References in 2012</span></h2>
+        <p>
+            This catalogues the reference of each major </br> political candidate in October of the </br>2012 campaign. </p>
+        
+<p align="left">&nbsp;</p>
+
+    <a name="examples"></a>
+    <h2>&nbsp;</h2>
+</body>
+</html>
